@@ -4,4 +4,8 @@ class Api::MealsController < ApplicationController
         meals = Meal.all
         render json: MealSerializer.new(meals)
     end
+
+    def create
+        byebug
+    end
 end
