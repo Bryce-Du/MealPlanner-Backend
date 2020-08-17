@@ -18,12 +18,6 @@ class Api::MealsController < ApplicationController
         end
     end
 
-    # show is possibly unnecessary now
-    def show
-        meal = Meal.find(params[:id])
-        render json: MealSerializer.new(meal)
-    end
-
     def update
         meal = Meal.find(params[:id])
         MealsIngredient.destroy(meal.meals_ingredients.map{|mi| mi.id})
